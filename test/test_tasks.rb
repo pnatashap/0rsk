@@ -77,4 +77,29 @@ class Rsk::TasksTest < Minitest::Test
     task = tasks.fetch[0]
     tasks.postpone(task[:id], 60 * 60)
   end
+
+  def test_done_tasks
+    login = "bobbyD#{rand(99_999)}"
+    project = Rsk::Projects.new(test_pgsql, login).add("test#{rand(99_999)}")
+    cid = Rsk::Causes.new(test_pgsql, project).add('we have data')
+    rid = Rsk::Risks.new(test_pgsql, project).add('we may lose it')
+    eid = Rsk::Effects.new(test_pgsql, project).add('business will stop')
+    triples = Rsk::Triples.new(test_pgsql, project)
+    triples.add(cid, rid, eid)
+    plans = Rsk::Plans.new(test_pgsql, project)
+    pid = plans.add(eid, 'solve it!')
+    plans.get(pid, eid).schedule = (Time.now - (5 * 24 * 60 * 60)).strftime('%d-%m-%Y')
+    tasks = Rsk::Tasks.new(test_pgsql, login)
+    task = tasks.fetch[0]
+    tasks.done(task[:id])
+  end
+
+  def test_done_not_exists_tasks
+    login = "bobbyE#{rand(99_999)}"
+    tasks = Rsk::Tasks.new(test_pgsql, login)
+    error = assert_raises Rsk::Urror do
+      tasks.done(123)
+    end
+    assert !error.message.index('not found in projects').nil?
+  end
 end
