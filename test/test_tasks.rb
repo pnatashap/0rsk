@@ -90,6 +90,7 @@ class Rsk::TasksTest < Minitest::Test
     pid = plans.add(eid, 'solve it!')
     plans.get(pid, eid).schedule = (Time.now - (5 * 24 * 60 * 60)).strftime('%d-%m-%Y')
     tasks = Rsk::Tasks.new(test_pgsql, login)
+    tasks.create
     task = tasks.fetch[0]
     tasks.done(task[:id])
   end
