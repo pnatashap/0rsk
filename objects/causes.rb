@@ -22,7 +22,6 @@
 
 require_relative 'rsk'
 require_relative 'cause'
-require_relative 'urror'
 require_relative 'query'
 
 # Causes.

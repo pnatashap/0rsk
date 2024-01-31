@@ -22,6 +22,7 @@
 
 require_relative 'rsk'
 require_relative 'query'
+require_relative 'urror'
 
 # Triples.
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
