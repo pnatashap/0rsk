@@ -27,10 +27,10 @@ require 'rake/clean'
 
 ENV['RACK_ENV'] = 'test'
 
-task default: %i[clean test eslint rubocop xcop copyright]
+task default: %i[clean pgsql liquibase test eslint rubocop xcop copyright]
 
 require 'rake/testtask'
-Rake::TestTask.new(test: %i[pgsql liquibase]) do |test|
+Rake::TestTask.new(test) do |test|
   Rake::Cleaner.cleanup_files(['coverage'])
   test.libs << 'lib' << 'test'
   test.pattern = 'test/test_*.rb'
