@@ -28,9 +28,6 @@ SimpleCov.start
 require 'simplecov-cobertura'
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
-require 'minitest/reporters'
-Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
-
 require 'yaml'
 require 'minitest/autorun'
 require 'pgtk/pool'
