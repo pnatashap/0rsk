@@ -38,7 +38,7 @@ require_relative '../objects/plans'
 # License:: MIT
 class Rsk::PipelineTest < Minitest::Test
   def test_adds_and_fetches
-    login = "bobby#{rand(99_999)}"
+    login = "teddy#{rand(99_999)}"
     project = Rsk::Projects.new(test_pgsql, login).add("testuu#{rand(99_999)}")
     cid = Rsk::Causes.new(test_pgsql, project).add('we have data')
     rid = Rsk::Risks.new(test_pgsql, project).add('we may lose it')
