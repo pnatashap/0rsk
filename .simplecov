@@ -31,6 +31,7 @@ SimpleCov.formatter = if Gem.win_platform?
                         )
                       end
 SimpleCov.start do
+  add_filter '/test/'
   add_filter '/liquibase/'
   add_filter '/public/'
   minimum_coverage 38

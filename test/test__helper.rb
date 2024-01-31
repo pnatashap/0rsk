@@ -32,15 +32,3 @@ require 'yaml'
 require 'minitest/autorun'
 require 'pgtk/pool'
 require 'loog'
-module Minitest
-  class Test
-    def test_pgsql
-      # rubocop:disable Style/ClassVars
-      @@test_pgsql ||= Pgtk::Pool.new(
-        Pgtk::Wire::Yaml.new(File.join(__dir__, '../target/pgsql-config.yml')),
-        log: Loog::VERBOSE
-      ).start
-      # rubocop:enable Style/ClassVars
-    end
-  end
-end
