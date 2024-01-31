@@ -31,7 +31,7 @@ require_relative '../objects/projects'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2019-2024 Yegor Bugayenko
 # License:: MIT
-class Rsk::RiskTest < Minitest::Test
+class Rsk::RiskTest < DBTest::Test
   def test_modifies_text
     pid = Rsk::Projects.new(test_pgsql, 'jeff32').add('test')
     before = 'text first'

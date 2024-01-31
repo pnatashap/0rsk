@@ -31,7 +31,7 @@ require_relative '../objects/projects'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2019-2024 Yegor Bugayenko
 # License:: MIT
-class Rsk::RisksTest < Minitest::Test
+class Rsk::RisksTest < DBTest::Test
   def test_adds_and_fetches
     pid = Rsk::Projects.new(test_pgsql, 'jeff094').add('test09')
     risks = Rsk::Risks.new(test_pgsql, pid)

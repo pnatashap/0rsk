@@ -28,7 +28,7 @@ require_relative '../objects/telechats'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2019-2024 Yegor Bugayenko
 # License:: MIT
-class Rsk::TelechatsTest < Minitest::Test
+class Rsk::TelechatsTest < DBTest::Test
   def test_checks
     login = "judy#{rand(99_999)}"
     telechats = Rsk::Telechats.new(test_pgsql)

@@ -35,7 +35,7 @@ require_relative '../objects/plans'
 # Author:: Yegor Bugayenko (yegor256@gmail.com)
 # Copyright:: Copyright (c) 2019-2024 Yegor Bugayenko
 # License:: MIT
-class Rsk::TriplesTest < Minitest::Test
+class Rsk::TriplesTest < DBTest::Test
   def test_adds_and_fetches
     login = "sarah#{rand(99_999)}"
     project = Rsk::Projects.new(test_pgsql, login).add("test#{rand(99_999)}")

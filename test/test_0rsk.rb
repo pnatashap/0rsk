@@ -37,7 +37,7 @@ module Rack
   end
 end
 
-class Rsk::AppTest < Minitest::Test
+class Rsk::AppTest < DBTest::Test
   include Rack::Test::Methods
 
   def app
