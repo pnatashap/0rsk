@@ -32,6 +32,7 @@ require 'yaml'
 require 'minitest/autorun'
 require 'pgtk/pool'
 require 'loog'
+
 module Minitest
   class Test
     def test_pgsql
