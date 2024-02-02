@@ -22,8 +22,6 @@
 
 require_relative 'rsk'
 require_relative 'plan'
-require_relative 'tasks'
-require_relative 'project'
 require_relative 'query'
 
 # Plans.
