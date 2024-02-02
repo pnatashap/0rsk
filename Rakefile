@@ -35,7 +35,7 @@ Rake::TestTask.new(test: %i[pgsql liquibase]) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-  test.warning = false
+  test.warning = true
 end
 
 require 'rubocop/rake_task'
