@@ -18,7 +18,7 @@ jobs:
         with:
           ruby-version: 3.0
       - run: bundle update
-      - run: bundle exec rake
+      - run: bundle exec rake test JRUBY_OPTS="--debug"
       - uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: true
