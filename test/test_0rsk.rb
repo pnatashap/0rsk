@@ -23,7 +23,7 @@
 require 'minitest/autorun'
 require 'rack/test'
 require_relative 'test__helper'
-require_relative '../0rsk'
+require_relative '../Orsk'
 require_relative '../objects/rsk'
 require_relative '../objects/projects'
 
