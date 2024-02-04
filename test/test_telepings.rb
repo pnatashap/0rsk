@@ -48,7 +48,7 @@ class Rsk::TelepingsTest < Minitest::Test
   end
 
   def test_adds
-    login = "judy#{rand(99_999)}"
+    login = "judyTA#{rand(99_999)}"
     tasks = test_tasks(login)
     telechats = Rsk::Telechats.new(test_pgsql)
     chat = rand(99_999)
